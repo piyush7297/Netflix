@@ -1,13 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './Home/Home';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Projects from './pages/Projects';
+import Contactus from './pages/Contactus';
+import img from './images/piyushdoc.JPEG'
+export let image = img;
+let router = createBrowserRouter([
+  {
+    path:'/',
+    element:<Home/>
+  },
+  {
+    path:'/portfolio',
+    element:<Home/>
+  },
+  {
+    path:'/projects',
+    element:<Projects/>
+  },
+  {
+    path:'/contact',
+    element:<Contactus/>
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
